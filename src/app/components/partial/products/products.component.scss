@@ -1,0 +1,101 @@
+.product{
+  background: rgb(255,212,181);
+background: radial-gradient(circle, rgba(255,212,181,1) 0%, rgba(255,255,255,0.8) 70%, rgba(255,255,255,0.8) 100%);
+  margin-bottom:30px;
+  padding: 15px;
+  border-radius:25px;
+  // background:white;
+  overflow:hidden;
+  .icons{
+    display: flex;
+    justify-content: space-between;
+    padding:10px 10px 20px 10px;
+    span{
+      border: rgb(221, 221, 221) solid 1px;
+      padding:5px 10px;
+      border-radius: 50%;
+      display: inline-block;
+      line-height: 25px;
+      img{
+        height: 15px;
+        width: 15px;
+
+      }
+    }
+  }
+  .image-container{
+    padding:0px 10px;
+    img{
+      width:100%;
+    }
+  }
+  .product-desc{
+    font-size:1.1rem;
+    text-align:center;
+    padding:10px 0px;
+    .name{
+      color:#5a3fa3;
+      font-weight:700;
+    }
+    .price{
+      color:#4e3a82;
+      font-weight: 500;
+      font-size:1rem;
+
+    }
+  }
+}
+
+@media(max-width:768px){
+
+  .product{
+    background: rgb(255,212,181);
+background: radial-gradient(circle, rgba(255,212,181,1) 0%, rgba(255,255,255,0.8) 70%, rgba(255,255,255,0.8) 100%);
+    margin-bottom:15px;
+    padding: 15px;
+    border-radius:15px;
+    // background:white;
+    overflow:hidden;
+    .icons{
+      display: flex;
+      justify-content: space-between;
+      padding:10px 10px 20px 10px;
+      span{
+        border: rgb(221, 221, 221) solid 1px;
+        padding:0px 5px;
+        border-radius: 50%;
+        display: inline-block;
+        line-height: 20px;
+        img{
+          height: 10px;
+          width: 10px;
+
+        }
+      }
+    }
+    .image-container{
+      padding:0px 10px;
+      img{
+        width:100%;
+      }
+    }
+    .product-desc{
+      font-size:0.8rem;
+      text-align:center;
+      padding:10px 0px;
+      .name{
+        color:#5a3fa3;
+        font-weight:700;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .price{
+        color:#4e3a82;
+        font-weight: 500;
+        font-size:0.7rem;
+
+      }
+    }
+  }
+}

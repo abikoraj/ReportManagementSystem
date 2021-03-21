@@ -1,0 +1,8 @@
+<div class="main">
+
+  <app-headercomponent *ngIf="!ismobile"></app-headercomponent>
+  <app-mobileheader *ngIf="ismobile"></app-mobileheader>
+  <router-outlet></router-outlet>
+  <app-mobilefooter  *ngIf="ismobile"></app-mobilefooter>
+</div>
+

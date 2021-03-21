@@ -1,0 +1,21 @@
+.item-container{
+  margin-top: 50px;
+}
+.carousel-container{
+  padding:0px 50px;
+  .carousel-custom{
+    border-radius:25px;overflow:hidden;
+  }
+}
+
+@media(max-width:768px){
+  .item-container{
+    margin-top: 20px;
+  }
+  .carousel-container{
+    padding:0px 10px;
+    .carousel-custom{
+      border-radius:15px;overflow:hidden;
+    }
+  }
+}

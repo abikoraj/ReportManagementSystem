@@ -1,0 +1,19 @@
+<!-- <div *ngFor="let item of this.c.sliders">
+  <img src="{{url+ item.slider_image }}" alt="">
+</div> -->
+<div class="carousel-container" >
+  <ngb-carousel class="carousel-custom">
+    <ng-template ngbSlide *ngFor="let item of this.c.sliders">
+      <div class="picsum-img-wrapper">
+        <!-- <img [src]="image" alt="Random slide"> -->
+        <img src="{{url+ item.slider_image }}" class="w-100" alt="">
+      </div>
+
+    </ng-template>
+  </ngb-carousel>
+</div>
+<div class="item-container">
+  <app-items [items]="this.it.items"></app-items>
+</div>
+
+

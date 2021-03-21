@@ -1,0 +1,19 @@
+<div class="header">
+  <div class="header-item text-left" >
+    <span class="brand">
+      <span class="brand-img">
+        <img src="https://img.icons8.com/plumpy/24/000000/circled-menu.png"/>
+      </span>
+      The Name
+    </span>
+  </div>
+  <div class="header-item text-center">
+    <span class="header-navitem" [routerLink]="['/home']" routerLinkActive="active" >Home</span>
+    <span class="header-navitem">Shop</span>
+    <span class="header-navitem">Collections</span>
+    <span class="header-navitem">Contact</span>
+  </div>
+  <div class="header-item text-right">
+    <app-headercart></app-headercart>
+  </div>
+</div>

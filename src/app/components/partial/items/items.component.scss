@@ -1,0 +1,16 @@
+.product-group{
+  margin:0px 150px;
+
+}
+
+@media(max-width:768px){
+  .product-group{
+    margin:0px 22px;
+    .row{
+      .col-6{
+        padding:0px 7px;
+      }
+    }
+
+  }
+}
