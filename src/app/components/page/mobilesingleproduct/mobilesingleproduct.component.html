@@ -1,0 +1,57 @@
+<div class="image">
+    <div class="image-container">
+        <div class="content">
+            <img src="{{currentImage}}" alt="">
+            
+            
+        </div>
+    </div>
+</div>
+<div class="description">
+    <div class="desc">
+        <div class="title">
+            {{product.product_name}}
+        </div>
+        <div class="price" *ngIf="price>0">
+            Rs. {{price}}
+        </div>
+        <div class="product-description">
+            {{product.product_short_description}}
+        </div>
+        <div class=" mt-2 m-0 row justify-content-center">
+            <div class="col-3 p-1 thumb-image-container" *ngFor="let item of images" (click)="selectImage(item)">
+                <img src="{{item}}" alt="" class="thumb-image">
+            </div>
+        </div>
+        <div class="variants" >
+            <div *ngFor="let v of variants" class="variant">
+                <app-variant [variant]="v" (selected)="choose($event)" [choosenvariants]="cv">
+                </app-variant>
+            </div>
+        </div>
+        <div class="checkout-section" >
+            <div>
+                <app-qty [max]="stock"  *ngIf="stock>0"></app-qty>
+                <button class="checkout-btn" *ngIf="stock>0">Add To Cart</button>
+                <span class="outofstock" *ngIf="stock<=0" >Out Of Stock</span>
+            </div>
+        </div>
+        <div class="product-detail detail-shown" >
+            <div class="tab">
+                <div class="tabheader">
+                    <span (click)="selectedTab=1" [ngClass]="{'active': selectedTab==1}">Description</span>
+                    <span (click)="selectedTab=2" [ngClass]="{'active': selectedTab==2}">Reviews</span>
+                </div>
+                <div class="tabbody" [ngSwitch]="selectedTab">
+                    <div *ngSwitchCase="2">
+                        <app-review [totalreview]="product.ratings" [product_id]="id"></app-review>
+                    </div>
+                    <div *ngSwitchDefault  [innerHTML]="product.product_description"></div>
+                
+    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

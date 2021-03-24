@@ -6,7 +6,7 @@ import { ApiService } from './api.service';
 })
 export class SearchService {
   searches:any[]=[];
-
+  public currentimage:string="";
   constructor( private client:ApiService) { }
   // search(keyword){
   //   this.client.get('sliders')

@@ -1,0 +1,97 @@
+.qty{
+    margin-top: 20px;
+    margin-right: 40px;
+    text-align: right;
+  
+    text-align:right;
+    .title{
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin: 0px 0px 5px 0px;
+        color: #5a3fa3;
+    }
+
+    .qty-input{
+
+        padding-right: 10px;
+       button{
+            background: #fa8c16;
+            color: white;
+            font-weight: 700;
+           padding:7px;
+           border:none;
+           outline: none;
+           line-height: 1;
+           border-radius: 5px;
+       }
+        input{
+            text-align: center;
+            padding: 5px;
+            border-radius: 7px;
+            width: 40px !important;
+            outline: none !important;
+            border:none;
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+            }
+
+            /* Firefox */
+            &[type=number] {
+            -moz-appearance: textfield;
+            }
+        }
+
+    }
+}
+
+@media(max-width:768px){
+    .qty{
+        margin-top: 10px;
+        margin-right: 0px;
+        text-align: center;
+      
+        text-align:center;
+        .title{
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 0px 0px 5px 0px;
+            color: #5a3fa3;
+        }
+    
+        .qty-input{
+            font-size:0.9rem;
+            padding-right: 10px;
+           button{
+                background: #fa8c16;
+                color: white;
+                font-weight: 700;
+               padding:7px;
+               border:none;
+               outline: none;
+               line-height: 1;
+               border-radius: 5px;
+           }
+            input{
+                text-align: center;
+                padding: 5px;
+                border-radius: 7px;
+                width: 40px !important;
+                outline: none !important;
+                border:none;
+                &::-webkit-outer-spin-button,
+                &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+                }
+    
+                /* Firefox */
+                &[type=number] {
+                -moz-appearance: textfield;
+                }
+            }
+    
+        }
+    }
+}

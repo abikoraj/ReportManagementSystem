@@ -17,6 +17,17 @@ import { MobilefooterComponent } from './components/partial/mobilefooter/mobilef
 import { SearchComponent } from './components/page/search/search.component';
 import { MobsearchComponent } from './components/page/mobsearch/mobsearch.component';
 import { FormsModule } from '@angular/forms';
+import { SingleproductComponent } from './components/page/singleproduct/singleproduct.component';
+import { VariantComponent } from './components/partial/variant/variant.component';
+import { VariantitemComponent } from './components/partial/variant/variantitem/variantitem.component';
+import { ReviewsComponent } from './components/partial/reviews/reviews.component';
+import { ReviewComponent } from './components/partial/review/review.component';
+import { QtyComponent } from './components/partial/qty/qty.component';
+import { MobilesingleproductComponent } from './components/page/mobilesingleproduct/mobilesingleproduct.component';
+import { CartComponent } from './components/page/cart/cart.component';
+import { MobilecartComponent } from './components/page/mobilecart/mobilecart.component';
+import { CartitemComponent } from './components/partial/cartitem/cartitem.component';
+import { MobcartitemComponent } from './components/partial/mobcartitem/mobcartitem.component';
 
 const routes:Routes=[
   {
@@ -24,13 +35,24 @@ const routes:Routes=[
     component:MaincomponentComponent,
     children:[
       {path:"home",component:HomeComponent},
-      {path:"search",component:SearchComponent}
+      {path:"search",component:SearchComponent},
+      {path:"cart",component:CartComponent},
+      {path:"product/:id",component: SingleproductComponent},
+      {
+        path:"mobcart",
+        component:MobilecartComponent
+      },
     ],
 
   },
   {
     path:"mobsearch",
     component:MobsearchComponent
+  },
+ 
+  {
+    path:"mobproduct/:id",
+    component:MobilesingleproductComponent
   }
 ];
 @NgModule({
@@ -47,6 +69,17 @@ const routes:Routes=[
     MobilefooterComponent,
     SearchComponent,
     MobsearchComponent,
+    SingleproductComponent,
+    VariantComponent,
+    VariantitemComponent,
+    ReviewsComponent,
+    ReviewComponent,
+    QtyComponent,
+    MobilesingleproductComponent,
+    CartComponent,
+    MobilecartComponent,
+    CartitemComponent,
+    MobcartitemComponent
   ],
   imports: [
     HttpClientModule,

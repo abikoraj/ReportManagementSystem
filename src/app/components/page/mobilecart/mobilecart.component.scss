@@ -1,0 +1,25 @@
+.checkout{
+    color:white;
+    margin:15px;
+    /* top: 97%; */
+    right: 0px;
+    background: #5a3fa3;
+    
+    padding: 15px  ;
+    border-radius: 30px;
+    font-weight:600;
+    .total{
+      padding:0px 15px 5px 15px;
+    }
+    button{
+      margin-top:10px;
+      display:block;
+      padding:10px 0px;
+      background:white;
+      color:#5a3fa3;
+      width:100%;
+      border-radius: 30px ;
+      border:1px solid white;
+      font-weight:600;
+    }
+  }

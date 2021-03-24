@@ -1,0 +1,27 @@
+<div class="box">
+    <div class="top">
+        <span class="link">Home/product/cart</span>
+        <span > something</span>
+    </div>
+</div>
+
+<div class="cart-items">
+    <div class="row">
+        <div class="col-12">
+            <app-cartitem *ngFor="let item of cart.items" [item]="item" (changed)="changed($event)" (deleted)="delete($event)"></app-cartitem>
+        </div>
+    </div>
+    <div class="checkout">
+        <div class="d-flex justify-content-between total">
+            <span>
+                Total 
+            </span>
+            <span>
+                Rs {{cart.total}}
+            </span>
+        </div>
+        <button>
+            Checkout
+        </button>
+    </div>
+</div>

@@ -1,14 +1,14 @@
 <div class="product"  >
   <div class="icons">
-    <span><img src="assets\images\maximize.png" alt=""></span>
+    <span><img src="assets\images\maximize.png" alt="" (click)="loadProduct()"></span>
     <span><img src="assets\images\shopping-bag.svg" alt=""></span>
     <!-- <span>a</span> -->
   </div>
-  <div class="image-container">
-      <!-- <img src="{{ url+ item.product_images }}" alt=""> -->
-      <img src="https://pngimg.com/uploads/running_shoes/running_shoes_PNG5827.png" alt="">
+  <div class="image-container" (click)="loadProduct()">
+      <img src="{{ url+ item.product_images }}" alt="">
+      <!-- <img src="https://pngimg.com/uploads/running_shoes/running_shoes_PNG5827.png" alt=""> -->
   </div>
-  <div class="product-desc">
+  <div class="product-desc" (click)="loadProduct()">
     <div class="name">
       {{ item.product_name }}
     </div>

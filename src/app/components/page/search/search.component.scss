@@ -36,6 +36,7 @@ box-shadow:0 0 10px 0 rgba(0,0,0,0.1);
   }
   .search-history{
     margin-bottom:75px;
+    min-height:100px;
     .title{
       font-weight: 700;
       padding:10px;
@@ -53,4 +54,8 @@ box-shadow:0 0 10px 0 rgba(0,0,0,0.1);
       }
     }
   }
+}
+
+.products{
+  margin-top:-150px;
 }

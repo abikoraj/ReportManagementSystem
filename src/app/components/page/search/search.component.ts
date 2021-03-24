@@ -8,18 +8,44 @@ import { SearchService } from 'src/app/services/search.service';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-
-  $products=[];
+  searching=false;
+  products=[];
   keyword:string;
+  searchkey:string[]=[];
   constructor(private client:ApiService) { }
 
   ngOnInit(): void {
+    var history = localStorage.getItem('search_history');
+    console.log(history);
+    if(history !=null && history!=undefined){
+      this.searchkey=JSON.parse(history).slice(0,13);
+    }
+  }
+  initSearch(item){
+    this.keyword=item;
+    this.search();
   }
 
+  clearHistory(){
+    this.searchkey=[];
+    localStorage.setItem('search_history',JSON.stringify(this.searchkey));
+  }
   search(){
-    let data={keywords:this.keyword};
-    this.client.post("search",data)
-    .subscribe();
+    if(!this.searching){
+      this.searching=true;
+      let data={keyword:this.keyword};
+      console.log(data);
+      this.client.post("search",data)
+      .subscribe((res:any)=>{
+        this.products=res;
+        this.searching=false;
+        if(this.searchkey.find(o=>o==this.keyword)==undefined){
+
+          this.searchkey.push(this.keyword);
+        }
+        localStorage.setItem('search_history',JSON.stringify(this.searchkey));
+      });
+    }
   }
 
 }

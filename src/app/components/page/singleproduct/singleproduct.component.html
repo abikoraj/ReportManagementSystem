@@ -1,0 +1,75 @@
+<div class="box">
+    <div class="top">
+        <span class="link">Home/product/{{product.product_name}}</span>
+        <span (click)="toogleDetail()"> {{detailbtntxt}}</span>
+    </div>
+</div>
+
+<div class="product">
+    <div class="d-flex">
+        <div class="desc">
+            <div class="title">
+                {{product.product_name}}
+            </div>
+            <div class="description">
+                {{product.product_short_description}}
+            </div>
+            <div class=" mt-2 m-0 row">
+                <div class="col-4 p-1 thumb-image-container" *ngFor="let item of images" (click)="selectImage(item)">
+                    <img src="{{item}}" alt="" class="thumb-image">
+                </div>
+            </div>
+        </div>
+        <div class="image">
+            <div class="image-container">
+                <div class="content">
+                    <img src="{{currentImage}}" alt="">
+                    <div class="price" *ngIf="price>0">
+                        Rs. {{price}}
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="selector">
+            <div class="variants" style="min-height:125px;">
+                <div *ngFor="let v of variants" class="variant">
+                    <app-variant [variant]="v" (selected)="choose($event)" [choosenvariants]="cv">
+                    </app-variant>
+                </div>
+            </div>
+            <div class="checkout-section" >
+                <div>
+                    <app-qty #qty [max]="stock"  *ngIf="stock>0"></app-qty>
+                    <button class="checkout-btn" *ngIf="stock>0" (click)="addToCart()">Add To Cart</button>
+                    <span class="outofstock" *ngIf="stock<=0" >Out Of Stock</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="product-detail detail-shown" >
+        <div class="tab">
+            <div class="tabheader">
+                <span (click)="selectedTab=1" [ngClass]="{'active': selectedTab==1}">Description</span>
+                <span (click)="selectedTab=2" [ngClass]="{'active': selectedTab==2}">Reviews</span>
+            </div>
+            <div class="tabbody" [ngSwitch]="selectedTab">
+                <div *ngSwitchCase="2">
+                    <app-review [totalreview]="product.ratings" [product_id]="id"></app-review>
+                </div>
+                <div *ngSwitchDefault  [innerHTML]="product.product_description"></div>
+            
+
+            </div>
+        </div>
+    </div>
+    <!-- <div class="detail" (click)="toogleDetail()" >
+        <button class="btn-detail">
+            {{detailbtntxt}}
+        </button>
+    </div> -->
+</div>
+
+<div class="recomended-products">
+    <app-items [items]="product.recom"></app-items>
+</div>
