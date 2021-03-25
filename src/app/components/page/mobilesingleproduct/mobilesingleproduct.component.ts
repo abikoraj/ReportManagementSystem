@@ -1,9 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Setting } from 'src/app/model/setting';
 import { Variant } from 'src/app/Models/variant';
 import { ApiService } from 'src/app/services/api.service';
+import { CartService } from 'src/app/services/cart.service';
+import { FavService } from 'src/app/services/fav.service';
 import { VariantService } from 'src/app/services/variant.service';
+import { ViewedService } from 'src/app/services/viewed.service';
+import { QtyComponent } from '../../partial/qty/qty.component';
 
 @Component({
   selector: 'app-mobilesingleproduct',
@@ -11,7 +16,7 @@ import { VariantService } from 'src/app/services/variant.service';
   styleUrls: ['./mobilesingleproduct.component.scss']
 })
 export class MobilesingleproductComponent implements OnInit {
-
+  active=false;
   currentImage:String="";
   images:string[]=[ ];
   showdetail=false;
@@ -26,9 +31,13 @@ export class MobilesingleproductComponent implements OnInit {
   price=0;
   selvariants = [];
   selectedTab=1;
-
+  variant = 'none';
+  @ViewChild('qty') qtyholder: QtyComponent;
   ngOnInit(): void {
     this.loadDetail();
+    window.scrollTo({
+      top:0
+    });
   }
 
   selectImage(image){
@@ -53,10 +62,10 @@ export class MobilesingleproductComponent implements OnInit {
     public client: ApiService,
     private router: Router,
     private route: ActivatedRoute,
-    // public fav: FavService,
-    // public location: Location,
-    // public cart: CartService,
-    // public viewservice: ViewedService,
+    public fav: FavService,
+    public location: Location,
+    public cart: CartService,
+    public viewservice: ViewedService,
     private variantevent: VariantService
   ) {
     this.router.routeReuseStrategy.shouldReuseRoute = function(){return false;};
@@ -69,12 +78,12 @@ export class MobilesingleproductComponent implements OnInit {
       .get( 'product/' + this.id)
       .subscribe((res: any) => {
         this.product = res;
-        // this.viewservice.add(
-        //   this.product.product_id,
-        //   this.product.product_name,
-        //   this.product.product_images
-        // );
-        // this.active = this.fav.favs.includes(this.product.product_id);
+        this.viewservice.add(
+          this.product.product_id,
+          this.product.product_name,
+          this.product.product_images
+        );
+        this.active = this.fav.favs.includes(this.product.product_id);
         if (this.product.stocktype == 1) {
           this.product.variants.forEach((attr) => {
             let v = new Variant();
@@ -112,6 +121,7 @@ export class MobilesingleproductComponent implements OnInit {
       });
     // });
   }
+
   //choose a variant
   choose(event) {
     console.log(event);
@@ -152,5 +162,20 @@ export class MobilesingleproductComponent implements OnInit {
     console.log('old code', this.code);
     this.code = c;
     this.setStock();
+  }
+  back(){
+    this.location.back();
+  }
+
+  addToCart() {
+    this.cart.addToCart(
+      this.product.product_id,
+      this.product.product_name,
+      this.product.product_images,
+      this.qtyholder.qty,
+      this.price,
+      this.variant
+    );
+    this.router.navigate(['/cart']);
   }
 }

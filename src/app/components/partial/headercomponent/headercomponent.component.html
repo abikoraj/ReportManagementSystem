@@ -23,9 +23,10 @@
   </div>
   <div class="header-item text-center">
     <span class="header-navitem" [routerLink]="['/home']" routerLinkActive="active">Home</span>
-    <span class="header-navitem">Shop</span>
-    <span class="header-navitem">Collections</span>
+    <span class="header-navitem" [routerLink]="['/shop']" routerLinkActive="active">Shop</span>
+    <span class="header-navitem" [routerLink]="['/collection']" routerLinkActive="active">Collections</span>
     <span class="header-navitem">Contact</span>
+    <span class="header-navitem" [routerLink]="['/account']" routerLinkActive="active">Account</span>
   </div>
   <div class="header-item text-right">
     <app-headercart></app-headercart>

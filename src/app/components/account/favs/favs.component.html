@@ -1,0 +1,9 @@
+<div style="padding:20px 50px;">
+    <div class="row">
+        <div class="col-2" style="margin-bottom:30px;cursor:pointer;" *ngFor="let item of this.history.favs" [routerLink]="['/product',item.id]" >
+                <div style="border-radius:50px;overflow:hidden;padding:3px;box-shadow:0px 0px 2px 0px rgba(0, 0, 0, 0.411);height:100%;display:flex;align-items: center;">
+                    <img class="w-100" src="{{url+item.image}}" alt=""  style="border-radius:50px;">
+                </div>
+        </div> 
+    </div>
+</div>

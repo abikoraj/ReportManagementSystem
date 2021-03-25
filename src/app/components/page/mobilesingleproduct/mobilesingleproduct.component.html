@@ -1,4 +1,12 @@
 <div class="image">
+    <div class="d-flex justify-content-between navbar">
+        <span (click)="back()">< back</span>
+        <span>
+            <span [routerLink]="['/home']"  > Home</span>
+            <span > account</span>
+            <span [routerLink]="['/cart']" > cart</span>
+        </span>
+    </div>
     <div class="image-container">
         <div class="content">
             <img src="{{currentImage}}" alt="">
@@ -31,8 +39,8 @@
         </div>
         <div class="checkout-section" >
             <div>
-                <app-qty [max]="stock"  *ngIf="stock>0"></app-qty>
-                <button class="checkout-btn" *ngIf="stock>0">Add To Cart</button>
+                <app-qty [max]="stock" #qty  *ngIf="stock>0"></app-qty>
+                <button class="checkout-btn" *ngIf="stock>0" (click)="addToCart()">Add To Cart</button>
                 <span class="outofstock" *ngIf="stock<=0" >Out Of Stock</span>
             </div>
         </div>

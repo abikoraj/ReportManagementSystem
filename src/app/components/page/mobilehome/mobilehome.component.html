@@ -1,0 +1,21 @@
+<div class="mobilehome">
+
+    <div  *ngFor="let item of this.service.sections;trackby:trackBy">
+        <div [ngSwitch]="item.type">
+            <div *ngSwitchCase="7">
+                <app-custom [item]="item"></app-custom>
+            </div>
+            <div *ngSwitchCase="8">
+                <app-ads [item]="item"></app-ads>
+    
+            </div>
+            <div *ngSwitchCase="9">
+                <app-carousel [item]="item"></app-carousel>
+    
+            </div>
+        </div>
+        <!-- <div class="list">
+            <app-productgroup [products]="item.products"></app-productgroup>
+        </div> -->
+    </div>
+</div>

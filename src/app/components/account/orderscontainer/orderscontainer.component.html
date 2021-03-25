@@ -1,0 +1,23 @@
+<div class="main">
+    <div class="order-nav">
+        <button class="btn-nav" [routerLink]="['/account/orders/0']"
+        routerLinkActive="active">
+            Pending
+        </button>
+        <button class="btn-nav" [routerLink]="['/account/orders/1']"
+        routerLinkActive="active">
+            Processing
+        </button>
+        <button class="btn-nav" [routerLink]="['/account/orders/2']"
+        routerLinkActive="active">
+            Shipped
+        </button>
+        <button class="btn-nav" [routerLink]="['/account/orders/3']"
+        routerLinkActive="active">
+            Completed
+        </button>
+       
+      
+    </div>
+    <router-outlet></router-outlet>
+</div>

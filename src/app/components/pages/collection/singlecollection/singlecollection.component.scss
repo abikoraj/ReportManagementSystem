@@ -1,0 +1,144 @@
+.col-single{
+    
+    
+    background:transparent;
+    overflow: hidden;
+    margin-bottom:0px;
+    margin:0px 100px;
+    .img-wrapper{
+        position: relative;
+        // background: #ffb564;
+        box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
+        max-height: 400px;
+        border-radius: 50px;
+        margin: 0px 50px;
+        // padding: 20px 50px;
+        overflow:hidden;
+        img{
+            width:100%;
+        }
+        .col-desc{
+            position: absolute;
+            top:0px;left:0px;right:0px;bottom:0px;
+            background:rgba(255,255,255,0.5);
+            // border-bottom-left-radius: 15px;
+            // border-bottom-right-radius: 15px;
+            padding:15px;
+            // margin-bottom:10px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            .title{
+                font-weight:600;
+                font-size:2rem;
+            }
+            .desc {
+                font-size:1.3rem;
+                text-align: center;
+                // overflow: hidden;
+                // text-overflow: ellipsis;
+                // display: -webkit-box;
+                // -webkit-line-clamp: 2; /* number of lines to show */
+                // -webkit-box-orient: vertical;
+             }
+             .link{
+                 color:#27ae60;
+                 text-align:right;
+                 padding:10px;
+                 font-weight:600;
+             }
+        }
+    }
+    .product-coll{
+        // margin: 15px 0 0 0;
+        // background: white;
+        // padding: 15px 10px;
+        // border-top-left-radius: 15px;
+        // border-top-right-radius: 15px;
+        margin-top:-100px;
+    }
+    .back{
+        position:absolute;
+        top:15px;
+        left:15px;
+        z-index:1001;
+        outline:transparent;
+        border:transparent;
+        background:transparent;
+    }
+}
+@media(max-width:768px){
+    .col-single{
+    
+    
+        background:transparent;
+        overflow: hidden;
+        margin-bottom:0px;
+        margin:0px 0px 15px 0px ;
+        .img-wrapper{
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            position: relative;
+            // background: #ffb564;
+            box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
+            max-height: 400px;
+            border-radius: 0px;
+            margin: 0px 0px;
+            // padding: 20px 50px;
+            overflow:hidden; 
+            img{
+                width:100%;
+            }
+            .col-desc{
+                position: relative;
+                top:0px;left:0px;right:0px;bottom:0px;
+                background:rgba(255,255,255,1);
+                // border-bottom-left-radius: 15px;
+                // border-bottom-right-radius: 15px;
+                padding:15px;
+                // margin-bottom:10px;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                .title{
+                    font-weight:600;
+                    font-size:0.9rem;
+                }
+                .desc {
+                    font-size:0.7rem;
+                    text-align: center;
+                    // overflow: hidden;
+                    // text-overflow: ellipsis;
+                    // display: -webkit-box;
+                    // -webkit-line-clamp: 2; /* number of lines to show */
+                    // -webkit-box-orient: vertical;
+                 }
+                 .link{
+                     color:#27ae60;
+                     text-align:right;
+                     padding:10px;
+                     font-weight:600;
+                 }
+            }
+        }
+        .product-coll{
+            // margin: 15px 0 0 0;
+            // background: white;
+            // padding: 15px 10px;
+            // border-top-left-radius: 15px;
+            // border-top-right-radius: 15px;
+            margin-top:15px;
+        }
+        .back{
+            position:absolute;
+            top:15px;
+            left:15px;
+            z-index:1001;
+            outline:transparent;
+            border:transparent;
+            background:transparent;
+        }
+    }
+}

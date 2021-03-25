@@ -1,0 +1,25 @@
+<div class="col-single" *ngIf="coll!=undefined">
+  <div class="img-wrapper">
+
+    <img [src]="url+coll.collection_image" alt="">
+    <div class="col-desc">
+      <div class="title">
+  
+        {{coll.collection_name}}
+      </div>
+      <div class="desc">
+        {{coll.collection_description}}
+  
+      </div>
+     
+  
+    </div>
+  </div>
+  <div class="product-coll">
+
+    <app-items [items]="products">
+
+    </app-items>
+  </div>
+ 
+</div>

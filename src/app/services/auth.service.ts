@@ -9,8 +9,8 @@ import { ApiService } from './api.service';
 })
 export class AuthService {
 
-  prevurl="/user";
-  redirect:string="/user";
+  prevurl="/account";
+  redirect:string="/account";
   signupredirecturl="/login";
   authenticated:false;
   username:string="";
@@ -20,13 +20,13 @@ export class AuthService {
   signupstart:EventEmitter<any>=new EventEmitter<any>();
   signupfailed:EventEmitter<any>=new EventEmitter<any>();
   signupsucceeded:EventEmitter<any>=new EventEmitter<any>();
-  
   authSet:EventEmitter<any>=new EventEmitter<any>();
   constructor(private router: Router,private client :ApiService) { 
     
     if (localStorage.getItem('access_token')){
       this.token=localStorage.getItem('access_token');
       this.client.updateToken(this.token);
+      
         this.client.getWithAuth('auth/user').
         subscribe((res:any)=>{
           this.setUser(res);
@@ -53,7 +53,7 @@ export class AuthService {
   canActivate(ext: ActivatedRouteSnapshot,ate: RouterStateSnapshot  ) {
     if(!this.logged){
       this.redirect=ate.url;
-      this.router.navigate(['/login']);
+      this.router.navigate(['/account/login']);
     }
     return true;
   }

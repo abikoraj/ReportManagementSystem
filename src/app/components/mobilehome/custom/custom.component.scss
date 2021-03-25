@@ -1,0 +1,22 @@
+.section{
+    background:transparent;
+    margin:15px 0px 0px 0px;
+    border-radius: 15px;;
+    padding:0px ;
+    .title{
+        font-weight:600;
+        font-size:1.1rem;
+        padding-bottom:5px;
+        margin-bottom:5px;
+        color:#464646;
+        // font-size:0.9rem;
+        text-align:center;
+        position: relative;
+
+        span{
+            padding: 0px 10px;
+            border-bottom: 2px solid #FFA53B;
+        }
+    }
+    
+}

@@ -1,0 +1,44 @@
+<div class="loginscreen" > 
+  <div class="inner">
+    <div class="icon">
+      <img src="/assets/bigbyapaar.svg" alt="">
+    </div>
+    <div class="title text-center"> 
+      Register
+    </div>
+    <div class="loginform">
+      <form [formGroup]="form"  >
+        <div class="fg">
+          <input type="text"  id="phone" placeholder="Phone Number" formControlName="phone"> 
+        </div>
+        <div class="fg">
+          <input type="text"  id="fname" placeholder="First Name" formControlName="fname">
+        </div>
+        <div class="fg">
+          <input type="text"  id="lname" placeholder="Last Name" formControlName="lname">
+        </div>
+        <div class="fg">
+          <input type="text"  id="address" placeholder="Enter Address"formControlName="address">
+        </div>
+        
+        <div class="fg">
+          <input type="email" id="email" placeholder="Enter Email Address" formControlName="email">
+        </div>
+        <div class="fg">
+          <input type="password" id="pass" placeholder="Enter  Password" formControlName="password">
+        </div>
+        <div class="fg">
+          <input type="password" id="repass" placeholder="Retype Password" formControlName="repass">
+        </div>
+      </form>
+      <div class="fg">
+        <button class="loginbtn" (click)="register()"  >Register</button>
+      </div>
+    </div>
+
+  
+    
+  </div>
+
+  
+</div>

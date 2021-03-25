@@ -1,0 +1,133 @@
+<div class="bb" >
+   
+    <div class="main">
+      <div class="post">
+        <div class="userinfo nooutline" [routerLink]="['/mobileprofile']" *ngIf="authservice.logged;else notlogged">
+          <span class="img-container">
+            <img [src]="authservice.user.image" alt="profile image">
+          </span>
+          <span class="name">
+  
+             {{authservice.user.fname}}
+             {{authservice.user.lname}} <br>
+             {{authservice.user.phone}} 
+          </span>
+        </div>
+        <ng-template #notlogged>
+          <div class="notlogged">
+            <span [routerLink]="['/mobilelogin']" routerLinkActive="router-link-active">Login To your Account</span>
+          </div>
+        </ng-template>
+  
+      </div>
+      <div class="post">
+        <div class="title">
+          <span>Orders</span>
+        </div>
+  
+        <div class="row m-0">
+          <div class="col-3 p-0">
+            <div class="item" [routerLink]="['/orders','0']" routerLinkActive="router-link-active">
+  
+              <div class="icon">
+                <img
+                  src="/assets/pending.svg"
+                  alt="">
+              </div>
+              <div class="text">
+                Pending
+              </div>
+            </div>
+          </div>
+          <div class="col-3 p-0">
+            <div class="item" [routerLink]="['/orders', '1']" routerLinkActive="router-link-active">
+  
+              <div class="icon">
+                <img
+                src="/assets/processing.svg"
+  
+                  alt="">
+              </div>
+              <div class="text">
+                Processing
+              </div>
+            </div>
+          </div>
+          <div class="col-3 p-0">
+            <div class="item" [routerLink]="['/orders', '2']">
+  
+              <div class="icon">
+                <img
+                src="/assets/shipped.svg"
+  
+                  alt="">
+              </div>
+              <div class="text">
+                Shipped
+              </div>
+            </div>
+          </div>
+          <div class="col-3 p-0">
+            <div class="item" [routerLink]="['/orders', '4']">
+  
+              <div class="icon">
+                <img
+                src="/assets/completed.svg"
+  
+                  alt="">
+              </div>
+              <div class="text">
+                Completed
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+     
+  
+      <div class="post" *ngIf="viewservice.views.length>0">
+        <div class="title d-flex justify-content-between">
+          <span>
+            Latest Viewed Products
+          </span>
+          <span [routerLink]="['/allview']"  >
+            View All
+          </span>
+        </div>
+        <div class="row m-0">
+          <div class="col-3 p-1" *ngFor="let item of viewservice.views.slice(0,8)">
+  
+            <img src="{{url+item.image}}" class="p-image" alt="" [routerLink]="['/product', item.id]">
+          </div>
+        </div>
+      </div>
+      <div class="post" *ngIf="fav.favs.length>0">
+        <div class="title d-flex justify-content-between">
+          <span>
+            WishList
+          </span>
+          <span [routerLink]="['/allfav']"  >
+            View All
+          </span>
+        </div>
+        <div class="row m-0">
+          <div class="col-3 p-1" *ngFor="let item of fav.favs.slice(0,8)">
+  
+            <img src="{{item.image}}" class="p-image" alt="" [routerLink]="['/product', item.id]">
+          </div>
+        </div>
+      </div>
+  
+      <div class="post">
+        <div class="title">
+          Services
+        </div>
+        <div class="row">
+          <div class="col-3">
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

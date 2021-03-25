@@ -1,0 +1,104 @@
+<div class="box">
+    <div class="top">
+        <span class="link">Home/Account</span>
+        <span > something</span>
+    </div>
+   
+</div>
+
+<div class="exp1">
+    <div class="profile-holder" *ngIf="this.auth.logged">
+        <div class="image">
+            <img src="{{this.auth.user.image}}" alt="">
+        </div>
+        <label class="image-edit nooutline">
+            <input #imageInput class="d-none" type="file" accept="image/*" (change)="processFile(imageInput)">
+            <svg id="Layer_1" enable-background="new 0 0 512.316 512.316" height="25" viewBox="0 0 512.316 512.316" width="25"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m220 456.658h-100c-66.168 0-120-53.832-120-120v-199c0-66.168 53.832-120 120-120h272c66.168 0 120 53.832 120 120v74c-1.056 26.536-38.953 26.516-40 0v-74c0-44.112-35.888-80-80-80h-272c-44.112 0-80 35.888-80 80v199c0 44.112 35.888 80 80 80h100c26.536 1.056 26.516 38.953 0 40zm78.92 37.612 56.664-11.326c28.1-5.617 53.663-19.296 73.925-39.559l61.109-61.109c65.653-71.339-31.976-168.863-103.237-103.237l-61.109 61.109c-20.262 20.262-33.941 45.825-39.559 73.926l-11.326 56.664c-1.31 6.557.742 13.334 5.47 18.062 3.788 3.788 8.891 5.858 14.142 5.858 1.304 0 2.617-.128 3.921-.388zm163.414-186.947c12.802 12.284 12.802 34.386 0 46.669l-61.109 61.109c-14.659 14.659-33.152 24.555-53.481 28.618l-27.253 5.447 5.447-27.253c4.064-20.33 13.96-38.823 28.619-53.481l61.109-61.109c6.233-6.233 14.52-9.666 23.334-9.666s17.102 3.433 23.334 9.666zm-110.334-134.665c13.807 0 25-11.193 25-25-1.317-33.162-48.688-33.153-50 0 0 13.807 11.193 25 25 25zm-22.495 109.769c7.605-8.011 7.276-20.67-.735-28.274 0 0-92.891-88.145-93.363-88.518-26.841-21.228-64.789-20.024-90.231 2.858-.378.34-58.643 61.356-58.643 61.356-7.626 7.99-7.332 20.65.659 28.277 7.991 7.626 20.65 7.331 28.277-.659l56.957-59.674c10.698-9.209 26.259-9.726 37.543-1.266l91.263 86.636c3.869 3.673 8.822 5.495 13.766 5.495 5.292 0 10.575-2.089 14.507-6.231z" />
+            </svg>
+          </label>
+    </div>
+    <div class="name" *ngIf="this.auth.logged">
+        {{this.auth.user.fname}} 
+        {{this.auth.user.lname}}, <br>
+        {{this.auth.user.address}} 
+
+
+    </div>
+    <div class="login" *ngIf="!this.auth.logged">
+        <button class="mr-2" [routerLink]="['/account/login']"  >
+
+            Login To Your Account
+        </button>
+        <button class="ml-2" [routerLink]="['/account/signup']" >
+
+            Create New Account
+        </button>
+    </div>
+    <div class="profile-nav">
+        <div class="left-nav">
+            <button class="btn-nav">
+                Profile
+            </button>
+            <button class="btn-nav" [routerLink]="['/account/orders']"  routerLinkActive="active" >
+                Orders
+            </button>
+            <button class="btn-nav" [routerLink]="['/account/history']"  routerLinkActive="active"  >
+                History
+            </button>
+            <button class="btn-nav" [routerLink]="['/account/favs']"  routerLinkActive="active" >
+                Favs
+            </button>
+            <button class="btn-nav"   *ngIf="this.auth.logged">
+                Edit Profile
+            </button>
+            <button class="btn-nav"   *ngIf="this.auth.logged">
+                Change Password
+            </button>
+            <button class="btn-nav"   *ngIf="this.auth.logged" (click)="logOut()">
+                Logout
+            </button>
+            <button class="btn-nav"    *ngIf="!this.auth.logged"  [routerLink]="['/account/login']" routerLinkActive="active" >
+                Log In
+            </button>
+            <button class="btn-nav"   *ngIf="!this.auth.logged"  [routerLink]="['/account/signup']" routerLinkActive="active" >
+                Sign up
+            </button>
+          
+        </div>
+       
+    </div>
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+</div>
+<!-- <div class="account-wrapper">
+    <div class="menu">
+        <div class="image-holder">
+            <div class="image">
+                <img src="{{this.auth.user.image}}" alt="">
+            </div>
+            <div class="detail">
+                {{this.auth.user.fname}} <br>
+                {{this.auth.user.lname}} <br>
+                {{this.auth.user.address}} <br>
+            </div>
+        </div>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia a ut autem culpa, laborum unde, similique incidunt labore aut, totam deserunt! Est ut, dignissimos repudiandae voluptate distinctio architecto repellat iusto. <br>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia a ut autem culpa, laborum unde, similique incidunt labore aut, totam deserunt! Est ut, dignissimos repudiandae voluptate distinctio architecto repellat iusto. <br>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia a ut autem culpa, laborum unde, similique incidunt labore aut, totam deserunt! Est ut, dignissimos repudiandae voluptate distinctio architecto repellat iusto. <br>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia a ut autem culpa, laborum unde, similique incidunt labore aut, totam deserunt! Est ut, dignissimos repudiandae voluptate distinctio architecto repellat iusto. <br>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia a ut autem culpa, laborum unde, similique incidunt labore aut, totam deserunt! Est ut, dignissimos repudiandae voluptate distinctio architecto repellat iusto. <br>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia a ut autem culpa, laborum unde, similique incidunt labore aut, totam deserunt! Est ut, dignissimos repudiandae voluptate distinctio architecto repellat iusto. <br>
+    </div>
+    <div class="main">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia a ut autem culpa, laborum unde, similique incidunt labore aut, totam deserunt! Est ut, dignissimos repudiandae voluptate distinctio architecto repellat iusto. <br>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia a ut autem culpa, laborum unde, similique incidunt labore aut, totam deserunt! Est ut, dignissimos repudiandae voluptate distinctio architecto repellat iusto. <br>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia a ut autem culpa, laborum unde, similique incidunt labore aut, totam deserunt! Est ut, dignissimos repudiandae voluptate distinctio architecto repellat iusto. <br>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia a ut autem culpa, laborum unde, similique incidunt labore aut, totam deserunt! Est ut, dignissimos repudiandae voluptate distinctio architecto repellat iusto. <br>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia a ut autem culpa, laborum unde, similique incidunt labore aut, totam deserunt! Est ut, dignissimos repudiandae voluptate distinctio architecto repellat iusto. <br>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia a ut autem culpa, laborum unde, similique incidunt labore aut, totam deserunt! Est ut, dignissimos repudiandae voluptate distinctio architecto repellat iusto. <br>
+    </div>
+</div> -->

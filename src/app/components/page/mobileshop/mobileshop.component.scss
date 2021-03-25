@@ -1,0 +1,37 @@
+.nav-btn{
+    display: inline-block;
+    cursor:pointer;
+    padding: 15px 25px;
+    background: transparent;
+    border:none;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    margin-bottom:10px;
+    flex-wrap: wrap;
+    button {
+        display: inline-block;
+        cursor:pointer;
+        padding: 15px 25px;
+        background: transparent;
+        border:none;
+        // background:white;
+        // border:1px solid #f1f1f1;
+      }
+    .page {
+    //   clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+      // clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    //   border-left:1px solid #b3b3b3;
+    //   border-right:1px solid #b3b3b3;
+      display: inline-block;
+      color: #001c3a;
+  
+      &.active {
+        background: #FFB564;
+        color:white;
+      }
+    }
+  }

@@ -1,0 +1,27 @@
+<div class="bb"  >
+  <!-- <app-othenav title="Product History" #navbar></app-othenav> -->
+  <div class="mobile-nav">
+    <span>
+      Viewed Products
+    </span>
+  </div>
+  <div class="main">
+      <div class="post  ">
+        <div class="text-right">
+          <button class="clear" (click)="view.clear()">
+            Clear All
+            
+
+          </button>
+        </div>
+        <div class="row m-0">
+          <div class="col-6 p-2 " *ngFor="let item of view.views">
+            <div class="product">
+
+              <img src="{{url+item.image}}" class="p-image w-100" alt="" [routerLink]="['/product', item.id]">
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
