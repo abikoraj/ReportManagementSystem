@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FavService } from 'src/app/services/fav.service';
 
@@ -8,8 +9,11 @@ import { FavService } from 'src/app/services/fav.service';
 })
 export class AllfavComponent implements OnInit {
 
-  constructor(public fav:FavService) { }
+  constructor(public fav:FavService,private location:Location) { }
 
   ngOnInit() {}
 
+  back(){
+    this.location.back();
+  }
 }

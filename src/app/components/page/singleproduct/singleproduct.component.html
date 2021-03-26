@@ -21,6 +21,9 @@
             </div>
         </div>
         <div class="image">
+            <div class="fav" (click)="manageFav(product.product_id)" [ngClass]="{'active': active}">
+                a
+            </div>
             <div class="image-container">
                 <div class="content">
                     <img src="{{currentImage}}" alt="">

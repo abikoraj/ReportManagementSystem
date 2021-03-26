@@ -1,5 +1,31 @@
-.item-container{
-  margin-top: 50px;
+.featured{
+  margin-top: -150px;
+}
+
+.ads{
+  margin:0px 150px 50px 150px;
+  img{
+    border-radius: 15px;
+  }
+}
+.top{
+  .title{
+    text-align:center;
+    font-weight:600;
+    font-size:2rem;
+    margin-bottom:20px;
+    position: relative;
+    &::after{ 
+      position: absolute;
+      bottom:0px;
+      height:2px;
+      width:100px;
+      left:calc(50% - 50px);
+      content: "";
+      background:#FF8401;
+    }
+
+  }
 }
 .carousel-container{
   padding:0px 50px;
@@ -9,8 +35,9 @@
 }
 
 @media(max-width:768px){
-  .item-container{
+  .featured{
     margin-top: 20px;
+    margin-bottom:20px;
   }
   .carousel-container{
     padding:0px 10px;

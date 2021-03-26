@@ -17,7 +17,13 @@ export class CollectionitemComponent implements OnInit {
   }
 
   loadSingle(){
-    this.router.navigate(["/collection/"+this.coll.collection_id]);
+    if(window.innerWidth>768){
+
+      this.router.navigate(["/collection/"+this.coll.collection_id]);
+    }else{
+      this.router.navigate(["/mobilecollection/"+this.coll.collection_id]);
+
+    }
   }
 
 }

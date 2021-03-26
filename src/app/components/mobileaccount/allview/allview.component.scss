@@ -4,7 +4,7 @@
     // margin-top:49px;
     min-height:calc(100vh - 40px);
     &.topped {
-      background: #efefef !important;
+      background: #a19292 !important;
     }
     .mobile-nav{
       background:#FF7F1F;
@@ -12,6 +12,12 @@
       text-align:center;
       color:white;
       font-weight:600;
+      .back{
+        position: absolute;
+        left:15px;
+        top:10px;
+        cursor: pointer;
+      }
     }
     .main {
       // background: #efefef;
@@ -28,7 +34,7 @@
         background: white;
         border-radius: 15px;
         margin: 5px;
-        padding: 10px;
+        // padding: 10px;
         margin-bottom:10px;
         .product{
           border-radius:15px;

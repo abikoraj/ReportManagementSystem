@@ -63,6 +63,8 @@ import { ProfileComponent } from './components/mobileaccount/profile/profile.com
 import { ChangepasswordComponent } from './components/mobileaccount/changepassword/changepassword.component';
 import { AllfavComponent } from './components/mobileaccount/allfav/allfav.component';
 import { AllviewComponent } from './components/mobileaccount/allview/allview.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 const routes:Routes=[
   {
@@ -76,6 +78,7 @@ const routes:Routes=[
       {path:"collection",component:CollectionComponent},
       {path:"collection",component:CollectionComponent},
       {path:"collection/:id",component: SinglecollectionComponent},
+      {path:"product/:id",component: SingleproductComponent},
       {path:"account",component:window.innerWidth>768? AccountComponent:MobileaccountComponent,
         children:[
           {path:"login",component:LoginComponent},
@@ -205,6 +208,7 @@ const routes:Routes=[
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
 
   ],
   providers: [],

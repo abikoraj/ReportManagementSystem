@@ -10,11 +10,10 @@ import { ItemsService } from 'src/app/services/items.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor( public c :HomepageService,public it :ItemsService) { }
+  constructor( public homeService :HomepageService) { }
   url=Setting.url;
   ngOnInit(): void {
-    this.c.loadSliders();
-    this.it.loaditems();
+    
   }
 
 }

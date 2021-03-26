@@ -178,4 +178,9 @@ export class MobilesingleproductComponent implements OnInit {
     );
     this.router.navigate(['/cart']);
   }
+
+  manageFav(id) {
+    this.fav.addFav(id,this.product.product_name,this.images[0]);
+    this.active = this.fav.includes(this.product.product_id);
+  }
 }

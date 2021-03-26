@@ -1,4 +1,12 @@
 <div class="bb"  >
+  <div class="mobile-nav">
+    <span>
+      Viewed Products
+    </span>
+    <span class="back" (click)="back()">
+      << back
+    </span>
+  </div>
   <!-- <app-othenav title="My Wishlist" #navbar></app-othenav> -->
   <div class="main">
       <div class="post  ">
@@ -13,7 +21,7 @@
           <div class="col-6 p-2 " *ngFor="let item of fav.favs">
             <div class="product">
 
-              <img src="{{item.image}}" class="p-image" alt="" [routerLink]="['/product', item.id]">
+              <img src="{{item.image}}" class="p-image w-100" alt="" [routerLink]="['/product', item.id]">
             </div>
           </div>
         </div>

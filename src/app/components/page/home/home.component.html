@@ -3,7 +3,7 @@
 </div> -->
 <div class="carousel-container" >
   <ngb-carousel class="carousel-custom">
-    <ng-template ngbSlide *ngFor="let item of this.c.sliders">
+    <ng-template ngbSlide *ngFor="let item of this.homeService.sliders">
       <div class="picsum-img-wrapper">
         <!-- <img [src]="image" alt="Random slide"> -->
         <img src="{{url+ item.slider_image }}" class="w-100" alt="">
@@ -12,8 +12,25 @@
     </ng-template>
   </ngb-carousel>
 </div>
-<div class="item-container">
-  <app-items [items]="this.it.items"></app-items>
+<div class="featured">
+  <app-items [items]="this.homeService.featuredProducts"></app-items>
+</div>
+<div class="ads">
+  <div class="row">
+    <div class="col-md-6">
+      <img src="https://i.pinimg.com/originals/0b/a3/d6/0ba3d60362c7e6d256cfc1f37156bad9.jpg" alt="" class="w-100">
+    </div>
+    <div class="col-md-6">
+      <img src="https://i.pinimg.com/originals/0b/a3/d6/0ba3d60362c7e6d256cfc1f37156bad9.jpg" alt="" class="w-100">
+    </div>
+  </div>
+</div>
+<div class="top">
+  <div class="title">
+    Top Products
+  </div>
+  <app-items [items]="this.homeService.topProducts"></app-items>
+
 </div>
 
 
